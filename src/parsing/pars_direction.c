@@ -6,7 +6,7 @@
 /*   By: helfayez <helfayez@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 20:57:49 by helfayez          #+#    #+#             */
-/*   Updated: 2026/11/07 21:17:22 by helfayez         ###   ########.fr       */
+/*   Updated: 2026/11/07 21:20:45 by helfayez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,3 +59,4 @@ void pase_line(char *line, t_game *game)
         exit(1);
     }
 }
+
