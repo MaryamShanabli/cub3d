@@ -6,7 +6,7 @@
 /*   By: helfayez <helfayez@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 15:19:40 by helfayez          #+#    #+#             */
-/*   Updated: 2026/11/07 20:47:28 by helfayez         ###   ########.fr       */
+/*   Updated: 2026/11/19 13:17:48 by helfayez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,13 @@
 char check_cub(char *myfile)
 {
     size_t file_len;
-    char *end;
-    
-    file_len = ft_strlen(myfile);
-    end = myfile + file_len -4;
+
     if(!myfile)
         return 0;
-    if(file_len >= 4)    
-    if (ft_strncmp(end,".cub", 4) != 0)
+    file_len = ft_strlen(myfile);
+    if(file_len <= 4)
+        return 0;    
+    if (ft_strncmp(myfile + file_len - 4,".cub", 4) != 0)
         return 0;
     if(myfile[file_len - 5] == '/')
         return 0;
@@ -50,7 +49,7 @@ void pars_cub_file(char *file_path, t_game *game)
     fd = open(file_path, O_RDONLY);
     if(fd < 0)
     {
-        ft_putendl_fd("ERROR: cannot open file\n", 2);
+        ft_putendl_fd("Error: cannot open file\n", 2);
         exit(1);
     }
     line = get_next_line(fd);
